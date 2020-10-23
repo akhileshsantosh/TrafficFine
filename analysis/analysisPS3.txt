@@ -1,0 +1,48 @@
+This file documents the summary asymptotic running time analysis.
+
+A. Driver Hash
+-----------------
+-->Functions:
+-->1. initializeHash(self) : Time complexity is O(m) , where m is number of buckets in hash.
+
+-->2. insertHash(self, driverhash) : Time complexity is O(1+l) : where l is load factore ; load factor = n / m
+   where n = Number of elements in hash table
+         m = hash table size
+
+-->3. printViolators(driverhash): Time complexiy is O(n) ; n is no of elements in hash table ;
+   we need to traverse to each license number and check if violations are serious (> 3)
+
+-->4. destroyHash(driverhash): Time complexity is O(1) ; To clear the python list
+
+
+B. PoliceTree
+--------------
+-->Functions:
+
+-->1. insertByPoliceId (policeRoot, policeId, amount) :
+Time complexity is In general is O(h) where h is height of BST. Iin worst case h = n , where n is no of nodes in tree.
+
+-->2. def reorderByFineAmount (policeRoot):
+This involves two operations 1) Deleting from old tree and 2) Inserting in new tree
+For deleting the time complexity is O(h) ; where h is height of tree and in worst case it can be n
+For insertion the time complexity is O(h) ; where h is height of tree and in worst case it can be n
+So total time complexity for reorder is : O(h) + O(h) = 2 O(h) which is again in order of h.
+Hence time time complexity for delete is O(h) = O(n) ; where h is height of tree and in worst case it can be n
+
+--> 3. def printBonusPolicemen (policeRoot):
+  This includes 1) finding the highest amount of a policemen and 2) traversing tree to find the policemen 0.90 of max
+  amount. Both will take O(h) time complexity. Hence time complexity in worst case in O(n) , where n is number of nodes
+
+--> 4. def destroyPoliceTree (policeRoot):
+  This is equivalent to deleting all the nodes in tree , which is O(h) time complexity. Worst case time complexity is
+  O(n).
+
+--> 5. def printPoliceTree (policeRoot):
+    This is traversing the whole tree which in case of skewed tree can have n levels. So time complexity in worst case is
+    O(n).
+
+
+
+
+
+
